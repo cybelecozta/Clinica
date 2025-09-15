@@ -25,8 +25,7 @@ public class AgendamentoRepositoryVetor implements IRepository<Agendamento> {
     @Override
     public void remover(int id) {
         for (int i = 0; i < contador; i++) {
-            if (agendamentos[i] != null && agendamentos[i].getPaciente().getId() == id) {
-                // desloca os elementos à esquerda
+            if (agendamentos[i] != null && agendamentos[i].getPaciente().getId() == id) {            
                 for (int j = i; j < contador - 1; j++) {
                     agendamentos[j] = agendamentos[j + 1];
                 }
