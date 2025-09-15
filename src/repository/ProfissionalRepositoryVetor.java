@@ -27,7 +27,6 @@ public class ProfissionalRepositoryVetor implements IRepository<Profissional> {
     public void remover(int id) {
         for (int i = 0; i < contador; i++) {
             if (profissionais[i] != null && profissionais[i].getId() == id) {
-                // desloca os elementos à esquerda
                 for (int j = i; j < contador - 1; j++) {
                     profissionais[j] = profissionais[j + 1];
                 }
