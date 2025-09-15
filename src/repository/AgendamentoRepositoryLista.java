@@ -15,7 +15,6 @@ public class AgendamentoRepositoryLista implements IRepository<Agendamento> {
 
     @Override
     public void remover(int id) {
-        // Remover agendamento baseado no id do paciente, por exemplo
         agendamentos.removeIf(a -> a.getPaciente().getId() == id);
     }
 
@@ -29,6 +28,6 @@ public class AgendamentoRepositoryLista implements IRepository<Agendamento> {
 
     @Override
     public List<Agendamento> listar() {
-        return new ArrayList<>(agendamentos); // Retorna cópia da lista
+        return new ArrayList<>(agendamentos);
     }
 }
