@@ -12,9 +12,19 @@ public class PacienteService {
     }
 
     public void adicionar(Paciente paciente) {
-        repository.adicionar(paciente);
-    }
+        for (Paciente p : repository.listar()) {
+            if (p.getId() == paciente.getId()) {
+                System.out.println("ID já cadastrado!");
+                return;
+            }
+            if (p.getCpf() != null && p.getCpf().equals(paciente.getCpf())) {
+                System.out.println("CPF já cadastrado!");
+                return;
+            }
+        }
 
+        
+    }
     public void remover(int id) {
         repository.remover(id);
     }
